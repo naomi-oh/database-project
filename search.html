@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Search Form</title>
+        <link rel="stylesheet" href="styles.css" />
+        <h1>Protein Interaction Energy Database<br></h1>
+        <h2>SIMPLE SEARCH<br></h2>
+      </head>
+    <body>
+        <div class="form">
+            <form action="search.php" method="post">
+
+                <p>
+                Search keyword <input type="text" name="keyword" placeholder="e.g. receptor">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button></p>
+            </form>
+
+            <form action="id-search.php" method="post">
+
+                <p>
+                Search ID <input type="text" name="id" placeholder="e.g. 8">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button></p>
+            </form>
+        </div>
+
+        <h3>ADVANCED SEARCH<br></h3>
+        <form action="advanced-search.php" method="post">
+            <!--Advanced Search<br><br>-->
+            <p>PROTEIN INFORMATION</p>
+            
+            <p>
+            Protein1 <input type="text" name="protein1" placeholder="e.g. hormone">
+
+            Protein2 <select name="protein2">
+                <option value="all">All</option>
+            </select><br>
+            
+            Source Organism <input type="text" name="source_org" placeholder="e.g. human"><br>
+
+            PDB ID <input type="text" name="pdb_id" placeholder="e.g. 1A22"><br>
+
+            Wild-type Data:
+                <input type="radio" name="wild_type" value="wild">Yes<br>
+            
+            Mutation Type:
+                <input type="radio" name="mutation_type" value="single">Single
+                <input type="radio" name="mutation_type" value="double">Double
+                <input type="radio" name="mutation_type" value="multiple">Multiple<br>
+
+            Mutation <select name="original">
+                <option value="">All</option>
+                <option value="A">Ala (A)</option>
+                <option value="R">Arg (R)</option>
+                <option value="N">Asn (N)</option>
+                <option value="D">Asp (D)</option>
+                <option value="C">Cys (C)</option>
+                <option value="Q">Gln (Q)</option>
+                <option value="E">Glu (E)</option>
+                <option value="G">Gly (G)</option>
+                <option value="H">His (H)</option>
+                <option value="I">Ile (I)</option>
+                <option value="L">Leu (L)</option>
+                <option value="K">Lys (K)</option>
+                <option value="M">Met (M)</option>
+                <option value="F">Phe (F)</option>
+                <option value="P">Pro (P)</option>
+                <option value="S">Ser (S)</option>
+                <option value="T">Thr (T)</option>
+                <option value="W">Trp (W)</option>
+                <option value="Y">Tyr (Y)</option>
+                <option value="V">Val (V)</option>
+            </select>
+            to <select name="mutated">
+                <option value="">All</option>
+                <option value="A">Ala (A)</option>
+                <option value="R">Arg (R)</option>
+                <option value="N">Asn (N)</option>
+                <option value="D">Asp (D)</option>
+                <option value="C">Cys (C)</option>
+                <option value="Q">Gln (Q)</option>
+                <option value="E">Glu (E)</option>
+                <option value="G">Gly (G)</option>
+                <option value="H">His (H)</option>
+                <option value="I">Ile (I)</option>
+                <option value="L">Leu (L)</option>
+                <option value="K">Lys (K)</option>
+                <option value="M">Met (M)</option>
+                <option value="F">Phe (F)</option>
+                <option value="P">Pro (P)</option>
+                <option value="S">Ser (S)</option>
+                <option value="T">Thr (T)</option>
+                <option value="W">Trp (W)</option>
+                <option value="Y">Tyr (Y)</option>
+                <option value="V">Val (V)</option></p>
+            </select></p>
+
+            <p>EXPERIMENTAL CONDITIONS</p>
+
+            <p>
+            Experimental Technique <select name="experiment">
+                <option value="">All</option>
+                <option value="Competition ELISA">Competition ELISA</option>
+                <option value="Competitive Binding">Competitive Binding</option>
+                <option value="Competitive displacement">Competitive displacement</option>
+                <option value="Fluorescence Anisotropy/Polarization">Fluorescence Anisotropy/Polarization</option>
+                <option value="Isothermal Titration Calorimetry">Isothermal Titration Calorimetry</option>
+                <option value="Isothermal Titration Microcalorimetry">Isothermal Titration Microcalorimetry</option>
+                <option value="Microtiter Plate Antibody Capture Assay">Microtiter Plate Antibody Capture Assay</option>
+                <option value="Sedimentation equilibrium using analytical centrifugation or surface plasmon resonance">Sedimentation equilibrium using analytical centrifugation or surface plasmon resonance</option>
+                <option value="Surface Plasmon Resonance">Surface Plasmon Resonance</option>
+            </select><br>
+
+            Temperature (K) <input type="text" name="min_temp" placeholder="277">
+            to <input type="text" name="max_temp" placeholder="308"><br>
+
+            pH <input type="text" name="min_ph" placeholder="7.2">
+            to <input type="text" name="max_ph" placeholder="8"></p>
+
+            <p>THERMODYNAMIC PARAMETERS</p>
+
+            <p>
+            Binding free energy (kcal/mol) <input type="text" name="min_bfe" placeholder="-14.29">
+            to <input type="text" name="max_bfe" placeholder="-5.25"><br>
+
+            Change in binding free energy (kcal/mol) <input type="text" name="min_c_bfe" placeholder="-4.04">
+            to <input type="text" name="max_c_bfe" placeholder="6.97"></p>
+
+            <p>LITERATURE INFORMATION</p>
+
+            <p>
+            PubMed ID <input type="text" name="pubmed_id" placeholder="2014261"><br>
+
+            Author <input type="text" name="author" placeholder="Wells"><br>
+
+            Journal <input type="text" name="journal" placeholder="Sci"></p>
+
+            <p>DISPLAY COLUMNS:<br><br>
+
+            PROTEIN INFORMATION</p>
+
+            <p><br><br>
+            <input type="checkbox" name="entry_f" value="entry" checked>Entry ID
+            <input type="checkbox" name="pdb_f" value="pdb" checked>PDB ID
+            <input type="checkbox" name="protein1_f" value="protein_1" checked>Protein 1
+            <input type="checkbox" name="protein2_f" value="protein_2" checked>Protein 2
+            <input type="checkbox" name="mutation_f" value="mutations2" checked>Mutations</p>
+
+            <p>EXPERIMENTAL CONDITIONS</p>
+            <p>
+            <input type="checkbox" name="experiment_f" value="experiment">Experiment Type
+            <input type="checkbox" name="temperature_f" value="temperature">Temperature
+            <input type="checkbox" name="ph_f" value="ph">pH</p>
+
+            <p>THERMODYNAMIC PARAMETERS</p>
+            <p>
+            <input type="checkbox" name="bfe_f" value="bfe" checked>Binding Free Energy (kcal/mol)<br>
+            <input type="checkbox" name="c_bfe_f" value="change_bfe" checked>Change in Binding Free Energy (kcal/mol)</p>
+
+            <p>LITERATURE</p>
+            <p>
+            <input type="checkbox" name="pubmed_f" value="pubmed_id" checked>PubMed ID
+            <input type="checkbox" name="authors_f" value="authors">Authors
+            <input type="checkbox" name="journal_f" value="journal">Journal</p>
+
+            <p>SORTING OPTION:</p>
+
+            <p>
+            <input type="radio" name="sort_type" value="desc">Descending
+            <input type="radio" name="sort_type" value="asc">Ascending<br><br>
+
+            <select name="sort_field">
+                <option value="entry">Entry</option>
+                <option value="pdb">PDB ID</option>
+                <option value="mutations2">Mutation</option>
+                <option value="protein_1">Protein 1</option>
+                <option value="protein_2">Pritein 2</option>
+                <option value="experiment">Experiment</option>
+                <option value="temperature">Temperature</option>
+                <option value="ph">pH</option>
+                <option value="bfe">Binding free energy</option>
+                <option value="change_bfe">Change in binding free energy</option>
+                <option value="authors">Authors</option>
+                <option value="journal">Journal</option>
+                <option value="pubmed_id">PubMed ID</option>
+            </select>
+            </p>
+            <br>
+
+            <p>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </form>
+    </body>
+</html>
